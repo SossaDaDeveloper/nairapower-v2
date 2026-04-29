@@ -2,9 +2,6 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-// Translation files would normally be separate JSON files, but for this applet
-// we'll define them in an object for easier management in one turn.
-
 const resources = {
   en: {
     translation: {
@@ -109,8 +106,6 @@ const resources = {
       "sync_workspace": "Sync Workspace",
       "footer_price_indices": "April 2026 Price Indices Integrated • Nigeria Hackathon MVP",
       "footer_system_stable": "System Stable",
-      
-      // Power Sources
       "source_band_a_name": "Grid Band A (20-24 hrs)",
       "source_band_a_desc": "Premium Grid Supply",
       "source_band_b_name": "Grid Band B (16-20 hrs)",
@@ -127,16 +122,12 @@ const resources = {
       "source_diesel_desc": "₦2,020/L Approx.",
       "source_solar_name": "Solar / Inverter System",
       "source_solar_desc": "The Ultimate Goal",
-
-      // Categories
       "cat_cooling": "Cooling",
       "cat_kitchen": "Kitchen",
       "cat_business": "Business",
       "cat_laundry": "Laundry",
       "cat_entertainment": "Entertainment",
       "cat_lighting": "Lighting",
-
-      // Appliances
       "app_ac_1_5hp_split": "1.5HP Split AC",
       "app_ac_1_5hp_inverter": "1.5HP Inverter AC",
       "app_ac_2hp_split": "2HP Split AC",
@@ -192,7 +183,7 @@ const resources = {
       "back": "Back"
     }
   },
-  pcm: { // Pidgin
+  pcm: {
     translation: {
       "app_name": "NairaPower",
       "residential_audit": "Home Audit",
@@ -277,20 +268,8 @@ const resources = {
       "path_zero_bills": "Road to 0 Naira",
       "guarantee_5yr": "5 Years Warranty",
       "inflation_disclaimer": "Light money no go stress you again.",
-      "estimated_cost": "How much e go cost",
-      "payback_period": "Time money go come back",
-      "sabi_recommendation": "Sabi Advice",
-      "buy": "BUY AM",
-      "save": "SAVE",
-      "roi": "ROI",
-      "appliance_breakdown": "Everything wey dey use light",
-      "cost_category": "Money for each group",
-      "get_pdf": "Download PDF",
-      "money_waster": "Money Waster",
-      "optimized": "Better One",
       "solar_roi_q": "Solar ROI?",
       "bill_reduction": "Cut Bill?",
-      "impact": "My Impact?",
       "nudge_peak_alert": "Light Alert!",
       "nudge_off_btn": "I don off am",
       "sabi_score_desc": "Your Sabi level for 2026.",
@@ -310,7 +289,7 @@ const resources = {
       "upgrade_smart_plug_desc": "Stop vampire load."
     }
   },
-  yo: { // Yoruba
+  yo: {
     translation: {
       "app_name": "NairaPower",
       "residential_audit": "Ayewo Ile",
@@ -385,7 +364,6 @@ const resources = {
       "path_zero_bills": "Ọna rẹ si 0 Naira",
       "guarantee_5yr": "Atilẹyin Ọdun marun",
       "inflation_disclaimer": "Iye owo ina ko ni yọ ọ lẹnu mọ.",
-      "estimated_cost": "Iye owo",
       "payback_period": "Akoko ipadabọ owo",
       "sabi_recommendation": "Imọran Sabi",
       "buy": "RA",
@@ -404,7 +382,7 @@ const resources = {
       "cat_lighting": "Ina"
     }
   },
-  ig: { // Igbo
+  ig: {
     translation: {
       "app_name": "NairaPower",
       "residential_audit": "Nyocha Ụlọ",
@@ -479,7 +457,6 @@ const resources = {
       "path_zero_bills": "Ụzọ iji kwụọ 0 Naira",
       "guarantee_5yr": "Nkwado afọ ise",
       "inflation_disclaimer": "Ego ọkụ agaghị enye gị nsogbu ọzọ.",
-      "estimated_cost": "Ihe ọ ga-eri",
       "payback_period": "Oge nlaghachi ego",
       "sabi_recommendation": "Ndụmọdụ Sabi",
       "buy": "ZỤTA",
@@ -498,7 +475,7 @@ const resources = {
       "cat_lighting": "Ọkụ"
     }
   },
-  ha: { // Hausa
+  ha: {
     translation: {
       "app_name": "NairaPower",
       "residential_audit": "Duba Wutar Gidajen",
@@ -554,7 +531,6 @@ const resources = {
       "impact": "Tasirina?",
       "solar_roi": "Nazarin Kudin Solar",
       "years": "shekaru",
-      "estimated_cost": "Kiyasin kudi",
       "ai_intro": " Advisor Sabi ne a nan! 🇳🇬 Zan iya taimaka muku rage kudin wutar ku.",
       "login_secure": "NairaPower Dashboard",
       "phone_label": "Lambar wayar ku",
@@ -601,7 +577,7 @@ i18n
     resources,
     fallbackLng: 'en',
     interpolation: {
-      escapeValue: false, // react already safes from xss
+      escapeValue: false,
     },
     detection: {
       order: ['localStorage', 'navigator'],
