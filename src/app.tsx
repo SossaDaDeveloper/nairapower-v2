@@ -333,8 +333,13 @@ const App = () => {
   const [isStreaming, setIsStreaming] = useState(false);
 
   // AI Advisor Initialization
-  const ai = useMemo(() => new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY }), []);
-
+  const ai = useMemo(() => {
+    const key = import.meta.env.VITE_GEMINI_API_KEY;
+    if (!key) {
+      console.warn("Sabi AI Error: API Key is missing. Check your .env or Vercel settings.");
+    }
+    return new GoogleGenAI(key || "");
+  }, []);
   // Update AI greeting on language change
   useEffect(() => {
     setChatMessages([
