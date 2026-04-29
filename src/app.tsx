@@ -401,7 +401,7 @@ const App = () => {
         - Top Roadmap Actions: ${roadmapItems.map(i => t(i.nameKey)).join(', ')}
       `;
 
-      const response = await ai.models.generateContent({
+      const response = await genAI.getGenerativeModel({ model: "gemini-1.5-flash" })({
         model: "gemini-3-flash-preview",
         contents: [
           { role: 'user', parts: [{ text: `${auditSummary}\n\nUser Question: ${userQuery}` }] }
