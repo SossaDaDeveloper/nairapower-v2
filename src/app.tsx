@@ -333,10 +333,16 @@ const App = () => {
   const [isStreaming, setIsStreaming] = useState(false);
 
   // AI Advisor Initialization
-  const ai = useMemo(() => {
-  const key = import.meta.env.VITE_GEMINI_API_KEY;
-  if (!key) return null; // Prevents crash if key is missing
-  return new GoogleGenAI(key);
+  const genAI = useMemo(() => {
+  // Use import.meta.env, NOT process.env
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+  
+  if (!apiKey) {
+    console.error("API Key is missing! Check Vercel Env Vars.");
+    return null; 
+  }
+  
+    return new GoogleGenAI(apiKey);
   }, []);
   // Update AI greeting on language change
   useEffect(() => {
