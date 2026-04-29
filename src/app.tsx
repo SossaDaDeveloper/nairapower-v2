@@ -333,21 +333,14 @@ const App = () => {
   const [isStreaming, setIsStreaming] = useState(false);
 
   // AI Advisor Initialization
-  // 1. Ensure the import is correct (check your package.json)
-  import { GoogleGenerativeAI } from "@google/generative-ai"; 
-
-  // 2. Inside your App component, use this "Guarded" initialization:
   const genAI = useMemo(() => {
+  // Use import.meta.env, NOT process.env
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-
-  // If the key is missing, return null instead of crashing the app
-  if (!apiKey || apiKey === "undefined") {
-    console.error("Sabi AI: API Key is missing! Check Vercel Env Vars.");
+  
+  if (!apiKey) {
+    console.error("API Key is missing! Check Vercel Env Vars.");
     return null; 
   }
-
-  return new GoogleGenerativeAI(apiKey);
-}, []);
   
     return new GoogleGenAI(apiKey);
   }, []);
