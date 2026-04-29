@@ -334,11 +334,9 @@ const App = () => {
 
   // AI Advisor Initialization
   const ai = useMemo(() => {
-    const key = import.meta.env.VITE_GEMINI_API_KEY;
-    if (!key) {
-      console.warn("Sabi AI Error: API Key is missing. Check your .env or Vercel settings.");
-    }
-    return new GoogleGenAI(key || "");
+  const key = import.meta.env.VITE_GEMINI_API_KEY;
+  if (!key) return null; // Prevents crash if key is missing
+  return new GoogleGenAI(key);
   }, []);
   // Update AI greeting on language change
   useEffect(() => {
